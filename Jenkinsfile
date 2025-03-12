@@ -7,11 +7,11 @@ pipeline {
                 sh 'g++ -o hello_exec hello.cpp'
             }
         }
-        stage('Test') {
-            steps {
-                sh './hello_exec'
-            }
-        }
+       stage('Test') {
+    steps {
+        sh 'invalid_command'  // This will cause an error
+    }
+}
         stage('Deploy') {
             steps {
                 echo 'Deploying Application...'
